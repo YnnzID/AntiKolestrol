@@ -6,6 +6,7 @@ import { Menu, X, BookOpen, Sparkles } from 'lucide-react';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [progress, setProgress] = useState(0);
   const [active, setActive] = useState('#');
@@ -20,12 +21,22 @@ export function Navbar() {
   ];
 
   /* =========================
-     SCROLL
+     SCROLL (hide on scroll down)
   ========================= */
   useEffect(() => {
+    let lastY = window.scrollY;
+
     const handleScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 50);
+
+      // sembunyikan saat scroll ke bawah, munculkan saat scroll ke atas
+      if (y > lastY && y > 100) {
+        setHidden(true);
+      } else if (y < lastY) {
+        setHidden(false);
+      }
+      lastY = y;
 
       const total =
         document.documentElement.scrollHeight - window.innerHeight;
@@ -73,9 +84,10 @@ export function Navbar() {
         className={`
           fixed top-0 left-0 right-0 z-50
           transition-all duration-500
+          ${hidden && !mobileOpen ? '-translate-y-full' : 'translate-y-0'}
           ${scrolled
-            ? 'bg-white/95 backdrop-blur-xl py-2.5 sm:py-3 shadow-[0_4px_25px_rgba(20,83,45,0.12)]'
-            : 'bg-gradient-to-b from-white via-white/95 to-white/80 py-4 sm:py-5 lg:py-6'}
+            ? 'bg-white/95 backdrop-blur-xl py-2 shadow-[0_4px_25px_rgba(20,83,45,0.12)]'
+            : 'bg-gradient-to-b from-white via-white/95 to-white/80 py-2.5 sm:py-3'}
         `}
       >
         {/* subtle bottom line */}
@@ -93,20 +105,18 @@ export function Navbar() {
               LOGO
           ================================================== */}
           <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
-            {/* Ikon Buku + Sparkles */}
-            <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-              <BookOpen className="w-7 h-7 sm:w-8 sm:h-8 text-green-800" />
-              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-lime-500 absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 animate-pulse" />
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <BookOpen className="w-6 h-6 sm:w-7 sm:h-7 text-green-800" />
+              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-lime-500 absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 animate-pulse" />
             </div>
 
-            {/* Teks EdukasyaClub */}
             <span className="font-heading font-bold text-base sm:text-lg lg:text-xl tracking-tight text-green-800 whitespace-nowrap">
               Edukasya<span className="text-lime-500">Club</span>
             </span>
           </Link>
 
           {/* =================================================
-              DESKTOP MENU (muncul di lg, bukan md)
+              DESKTOP MENU
           ================================================== */}
           <div
             className="
@@ -125,13 +135,12 @@ export function Navbar() {
                   href={item.href}
                   onClick={() => handleMenuClick(item.href)}
                   className="
-                    relative px-3 xl:px-4 py-2 xl:py-2.5 rounded-full
+                    relative px-3 xl:px-4 py-1.5 xl:py-2 rounded-full
                     text-[10px] xl:text-[11px] font-bold tracking-[0.14em] xl:tracking-[0.16em] uppercase font-sans
                     transition-colors duration-300
                     group whitespace-nowrap
                   "
                 >
-                  {/* ACTIVE SELECTOR */}
                   {isActive && (
                     <span
                       className="
@@ -143,7 +152,6 @@ export function Navbar() {
                     />
                   )}
 
-                  {/* hover background */}
                   {!isActive && (
                     <span
                       className="
@@ -154,7 +162,6 @@ export function Navbar() {
                     />
                   )}
 
-                  {/* TEXT */}
                   <span
                     className={`
                       relative z-10 transition-colors duration-300
@@ -172,16 +179,14 @@ export function Navbar() {
           </div>
 
           {/* =================================================
-
-          {/* =================================================
-              MOBILE / TABLET BUTTON (muncul di bawah lg)
+              MOBILE / TABLET BUTTON
           ================================================== */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
             aria-expanded={mobileOpen}
             className="
-              lg:hidden relative w-10 h-10 sm:w-11 sm:h-11 rounded-full
+              lg:hidden relative w-9 h-9 sm:w-10 sm:h-10 rounded-full
               bg-green-800/10 border border-green-800/30
               flex items-center justify-center shrink-0
               text-green-800
@@ -209,7 +214,6 @@ export function Navbar() {
           }
         `}
       >
-        {/* subtle background pattern */}
         <div
           className="
             absolute inset-0 opacity-[0.05]
@@ -272,8 +276,6 @@ export function Navbar() {
               </Link>
             );
           })}
-
-
         </div>
       </div>
     </>
