@@ -18,7 +18,7 @@ export const anggota: Anggota[] = [
     nis: "221002",
     kelas: "XII FKK",
     jabatan: "Anggota",
-    tugas: "Materi A — Pengertian",
+    tugas: "",
     bagian: "A",
     foto: "/images/anggota-1.jpg"
   },

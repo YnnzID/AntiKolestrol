@@ -21,6 +21,13 @@ export function TimSection() {
                 <h3 className="font-heading text-3xl uppercase mb-2">{ketua?.nama}</h3>
                 <p className="font-sans text-lime italic font-bold mb-4">{ketua?.kelas}</p>
                 <p className="font-sans text-cream/80 text-sm leading-relaxed">{ketua?.tugas}</p>
+                <a
+                  href="https://ynnz.my.id"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="ynnz.my.id"
+                  className="absolute inset-0 z-20"
+                />
               </div>
             </div>
           </FadeIn>

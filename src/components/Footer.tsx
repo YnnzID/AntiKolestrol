@@ -25,10 +25,10 @@ export function Footer() {
         <div>
           <h4 className="font-bold uppercase tracking-widest text-lime mb-6 text-sm">Sumber</h4>
           <ul className="space-y-3 font-sans text-cream/80 text-sm">
-            <li>Buku Paket Biologi Kelas 12</li>
-            <li>Jurnal Medis Farmakologi</li>
-            <li>Publikasi FDA & BPOM RI</li>
-            <li>INTERNET</li>
+            <li>Buku Biologi Kelas XII</li>
+            <li>Jurnal Medis & Farmakologi</li>
+            <li>Sumber Regulasi — FDA & BPOM RI</li>
+            <li>Sumber Daring — PubMed, NCBI, dan situs ilmiah terpercaya</li>
           </ul>
         </div>
       </div>
@@ -61,7 +61,7 @@ export function Footer() {
 
         {/* KANAN: Disclaimer */}
         <p className="text-[12px] font-sans text-cream/50 text-center md:text-right max-w-lg">
-          Disclaimer: Informasi pada website ini ditujukan untuk keperluan edukasi sekolah, bukan sebagai pengganti nasihat medis profesional. Silakan konsultasikan dengan dokter Anda.
+          Disclaimer: Informasi pada website ini ditujukan untuk keperluan edukasi, bukan sebagai pengganti nasihat medis profesional. Silakan konsultasikan dengan dokter Anda.
         </p>
       </div>
     </footer>

@@ -7,6 +7,7 @@ import {
   Target, Package, DollarSign, MapPin, Megaphone,
   Activity, Dna, Droplet, Thermometer, Syringe, Heart
 } from 'lucide-react';
+import { a, section } from 'framer-motion/client';
 
 // ==================== KOMPONEN MEDIS DEKORATIF ====================
 
@@ -83,8 +84,6 @@ export function MateriSection() {
             judulScript="Anti Kolesterol"
           />
 
-
-
           <FadeIn className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
               <section className="relative overflow-hidden rounded-2xl border-l-4 border-forest bg-forest/5 p-6 md:p-8 mb-8 shadow-sm">
@@ -111,6 +110,7 @@ export function MateriSection() {
                   </ul>
                 </div>
               </section>
+
               {/* 5 Golongan Obat Anti Kolesterol */}
               <div className="bg-white p-8 rounded-3xl border border-grayish/20 shadow-sm
                               hover:shadow-xl hover:border-lime/40 transition-all duration-500">
@@ -138,21 +138,18 @@ export function MateriSection() {
                 {/* Stats medis */}
                 <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-grayish/20">
                   <div className="text-center">
-
                     <p className="font-heading text-xl text-forest">LDL</p>
                     <p className="font-sans text-[10px] text-grayish uppercase tracking-widest">
                       Diturunkan
                     </p>
                   </div>
                   <div className="text-center">
-
                     <p className="font-heading text-xl text-forest">HDL</p>
                     <p className="font-sans text-[10px] text-grayish uppercase tracking-widest">
                       Dijaga
                     </p>
                   </div>
                   <div className="text-center">
-
                     <p className="font-heading text-xl text-forest">Trigliserida</p>
                     <p className="font-sans text-[10px] text-grayish uppercase tracking-widest">
                       Diturunkan
@@ -177,6 +174,15 @@ export function MateriSection() {
                   Pencegahan Penyakit Jantung & Stroke
                 </p>
               </div>
+
+              {/* LINK WIKIPEDIA */}
+              <a
+                href="https://id.wikipedia.org/wiki/Statin"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Wikipedia: Obat Anti Kolesterol"
+                className="absolute inset-0 z-20"
+              />
             </div>
           </FadeIn>
         </div>
@@ -208,41 +214,52 @@ export function MateriSection() {
                 n: "Statin",
                 d: "Simvastatin, Atorvastatin, Rosuvastatin. Menghambat enzim HMG-CoA reduktase di hati.",
                 hl: false,
-                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvP8uDHEopREGaCb9mIISk9Gv9HPPkOwhu1gyw1id7g&s=10"
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvP8uDHEopREGaCb9mIISk9Gv9HPPkOwhu1gyw1id7g&s=10",
+                a: "https://id.wikipedia.org/wiki/Statin"
               },
               {
                 n: "Fibrat",
                 d: "Fenofibrat, Gemfibrozil. Menurunkan trigliserida dan meningkatkan HDL.",
                 hl: false,
-                img: "https://images.alodokter.com/dk0z4ums3/image/upload/v1757666671/attached_image/profibrat.jpg"
+                img: "https://images.alodokter.com/dk0z4ums3/image/upload/v1757666671/attached_image/profibrat.jpg",
+                a: "https://id.wikipedia.org/wiki/Fibrat",
               },
               {
                 n: "Bile Acid Sequestrant",
                 d: "Kolestiramin. Mengikat asam empedu di usus.",
                 hl: false,
                 icon: Syringe,
-                img: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=800&auto=format&fit=crop"
+                img: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=800&auto=format&fit=crop",
+                a: "https://id.wikipedia.org/wiki/Sequestran_asam_empedu",
               },
               {
                 n: "Penghambat Absorpsi",
                 d: "Ezetimibe. Menghambat penyerapan kolesterol di usus via NPC1L1 (Fokus Utama).",
                 hl: false,
-                img: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?q=80&w=800&auto=format&fit=crop"
+                img: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?q=80&w=800&auto=format&fit=crop",
+                a: "https://id.wikipedia.org/wiki/Ezetimibe",
               },
               {
                 n: "Niacin",
                 d: "Asam Nikotinat. Meningkatkan HDL dan menurunkan LDL.",
                 hl: false,
-                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReFd5zuo_tZp-AWXQwArS61ZKdULYwmz84peelo_ilY47sqYVOSt6WObxf&s=10"
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReFd5zuo_tZp-AWXQwArS61ZKdULYwmz84peelo_ilY47sqYVOSt6WObxf&s=10",
+                a: "https://id.wikipedia.org/wiki/Niasin",
               },
               {
                 n: "PCSK9 Inhibitor",
                 d: "Evolokumab, Alirocumab. Antibodi monoklonal suntik.",
                 hl: false,
-                img: "https://images.unsplash.com/photo-1584362917165-526a968579e8?q=80&w=800&auto=format&fit=crop"
+                img: "https://images.unsplash.com/photo-1584362917165-526a968579e8?q=80&w=800&auto=format&fit=crop",
+                a: "https://id.wikipedia.org/wiki/PCSK9",
               },
             ].map((item, i) => {
               const Icon = item.icon;
+              const wikiUrl =
+                "a" in item && item.a
+                  ? item.a
+                  : `https://id.wikipedia.org/w/index.php?search=${encodeURIComponent(item.n)}`;
+
               return (
                 <FadeIn
                   key={i}
@@ -271,10 +288,6 @@ export function MateriSection() {
                         ? 'bg-gradient-to-t from-forest via-forest/50 to-transparent'
                         : 'bg-gradient-to-t from-white via-white/30 to-transparent'
                       }`} />
-
-
-
-
                   </div>
 
                   {/* Konten */}
@@ -299,12 +312,22 @@ export function MateriSection() {
                       {String(i + 1).padStart(2, '0')}
                     </span>
                   </div>
+
+                  {/* LINK WIKIPEDIA */}
+                  <a
+                    href={wikiUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Wikipedia: ${item.n}`}
+                    className="absolute inset-0 z-20"
+                  />
                 </FadeIn>
               );
             })}
           </FadeIn>
         </div>
       </section>
+
       {/* ==================== MATERI C — ATURAN PAKAI ==================== */}
       <section className="py-24 bg-forest text-cream relative overflow-hidden">
         <div className="absolute top-12 left-0 right-0 text-lime/15 pointer-events-none">
@@ -342,6 +365,14 @@ export function MateriSection() {
                 Satu Kali Sehari
               </p>
 
+              {/* LINK WIKIPEDIA */}
+              <a
+                href="https://id.wikipedia.org/wiki/Ezetimibe"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Wikipedia: Ezetimibe"
+                className="absolute inset-0 z-20"
+              />
             </FadeIn>
 
             {/* Aturan Umum */}
@@ -416,12 +447,12 @@ export function MateriSection() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {[
-                { t: 'Sakit Kepala', d: 'Biasanya ringan dan hilang sendiri.', img: '/images/sakitkepala.png' },
-                { t: 'Nyeri Otot', d: 'Terutama bila dikombinasikan dengan statin.', img: '/images/nyeriotot.png' },
-                { t: 'Diare / Sembelit', d: 'Gangguan pencernaan sementara.', img: '/images/diare.png' },
-                { t: 'Kelelahan', d: 'Rasa lelah yang tidak wajar.', img: '/images/kelelahan.png' },
-                { t: 'Nyeri Perut', d: 'Ketidaknyamanan di area lambung.', img: '/images/nyeriperut.png' },
-                { t: 'Pusing', d: 'Umumnya sementara setelah beberapa hari.', img: '/images/pusing.png' },
+                { t: 'Sakit Kepala', d: 'Biasanya ringan dan hilang sendiri.', img: '/images/sakitkepala.png', wiki: 'https://id.wikipedia.org/wiki/Sakit_kepala' },
+                { t: 'Nyeri Otot', d: 'Terutama bila dikombinasikan dengan statin.', img: '/images/nyeriotot.png', wiki: 'https://id.wikipedia.org/wiki/Mialgia' },
+                { t: 'Diare / Sembelit', d: 'Gangguan pencernaan sementara.', img: '/images/diare.png', wiki: 'https://id.wikipedia.org/wiki/Diare' },
+                { t: 'Kelelahan', d: 'Rasa lelah yang tidak wajar.', img: '/images/kelelahan.png', wiki: 'https://id.wikipedia.org/wiki/Kelelahan' },
+                { t: 'Nyeri Perut', d: 'Ketidaknyamanan di area lambung.', img: '/images/nyeriperut.png', wiki: 'https://id.wikipedia.org/wiki/Nyeri_perut' },
+                { t: 'Pusing', d: 'Umumnya sementara setelah beberapa hari.', img: '/images/pusing.png', wiki: 'https://id.wikipedia.org/wiki/Pusing' },
               ].map((item, i) => (
                 <FadeIn
                   key={i}
@@ -443,7 +474,6 @@ export function MateriSection() {
                     />
                     {/* Overlay gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-forest/10 to-transparent" />
-
 
                     {/* Judul di atas foto */}
                     <h4 className="absolute bottom-3 left-4 right-4 
@@ -467,11 +497,19 @@ export function MateriSection() {
                   <div className="absolute bottom-0 left-0 h-1 w-0 bg-lime 
                         transition-all duration-500 
                         group-hover:w-full" />
+
+                  {/* LINK WIKIPEDIA */}
+                  <a
+                    href={item.wiki}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Wikipedia: ${item.t}`}
+                    className="absolute inset-0 z-20"
+                  />
                 </FadeIn>
               ))}
             </div>
           </FadeIn>
-
 
           {/* Kapan Harus ke Dokter */}
           <FadeIn className="bg-lime text-forest p-8 rounded-3xl 
@@ -510,64 +548,8 @@ export function MateriSection() {
             judulScript="Hidup Sehat"
           />
 
-          {/* ---------- 4 PILAR UTAMA (dengan foto) ---------- */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-            {[
-              {
-                t: 'MAKAN',
-                d: 'Rendah lemak jenuh, tinggi serat',
-                img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80&auto=format&fit=crop',
-              },
-              {
-                t: 'OLAHRAGA',
-                d: '30 menit, 5x seminggu',
-                img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop',
-              },
-              {
-                t: 'HINDARI',
-                d: 'Rokok, alkohol berlebih, stres',
-                img: 'https://images.unsplash.com/photo-1527018601619-a508a2be00cd?w=600&q=80&auto=format&fit=crop',
-              },
-              {
-                t: 'CEGAH',
-                d: 'Cek rutin 6 bulan sekali',
-                img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80&auto=format&fit=crop',
-              },
-            ].map((p, i) => {
-              return (
-                <FadeIn
-                  key={i}
-                  delay={i * 0.1}
-                  className="group bg-white rounded-3xl border border-grayish/20
-                       overflow-hidden flex flex-col
-                       transition-all duration-500
-                       hover:-translate-y-2 hover:shadow-xl hover:border-lime/50"
-                >
-                  {/* Foto contoh */}
-                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
-                    <img
-                      src={p.img}
-                      alt={p.t}
-                      loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    {/* overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-forest/10 to-transparent" />
-
-                  </div>
-
-                  {/* Teks */}
-                  <div className="p-5 text-center flex flex-col items-center justify-center flex-1">
-                    <h5 className="font-heading text-lg text-forest">{p.t}</h5>
-                    <p className="text-xs font-sans mt-2 text-grayish leading-relaxed">{p.d}</p>
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
-
           {/* ---------- APA ITU POLA HIDUP SEHAT? (dengan foto) ---------- */}
-          <FadeIn className="bg-white rounded-3xl border border-grayish/20 mb-10 overflow-hidden
+          <FadeIn className="bg-white rounded-3xl border border-grayish/20 mb-10 overflow-hidden relative
                         hover:shadow-lg transition-shadow duration-500">
             <div className="grid md:grid-cols-5 gap-0">
               {/* Foto */}
@@ -595,6 +577,15 @@ export function MateriSection() {
                 </p>
               </div>
             </div>
+
+            {/* LINK WIKIPEDIA */}
+            <a
+              href="https://id.wikipedia.org/wiki/Gaya_hidup_sehat"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Wikipedia: Gaya Hidup Sehat"
+              className="absolute inset-0 z-20"
+            />
           </FadeIn>
 
           {/* ---------- 5 PILAR POLA HIDUP SEHAT (dengan foto) ---------- */}
@@ -607,36 +598,41 @@ export function MateriSection() {
                   judul: 'Nutrisi Seimbang',
                   isi: 'Perbanyak sayur, buah, biji-bijian, dan ikan beromega-3. Kurangi gorengan, daging merah berlemak, dan makanan olahan.',
                   img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=80&auto=format&fit=crop',
+                  wiki: 'https://id.wikipedia.org/wiki/Gizi',
                 },
                 {
                   no: '02',
                   judul: 'Aktivitas Fisik Rutin',
                   isi: 'Minimal 30 menit olahraga sedang (jalan cepat, bersepeda, berenang) 5 kali seminggu.',
                   img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80&auto=format&fit=crop',
+                  wiki: 'https://id.wikipedia.org/wiki/Latihan_fisik',
                 },
                 {
                   no: '03',
                   judul: 'Istirahat Cukup',
                   isi: 'Tidur 7–8 jam per hari untuk membantu tubuh memperbaiki sel dan mengatur hormon stres.',
                   img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&q=80&auto=format&fit=crop',
+                  wiki: 'https://id.wikipedia.org/wiki/Tidur',
                 },
                 {
                   no: '04',
                   judul: 'Kelola Stres',
                   isi: 'Lakukan meditasi, yoga, atau hobi. Stres kronis dapat meningkatkan tekanan darah dan kolesterol LDL.',
                   img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80&auto=format&fit=crop',
+                  wiki: 'https://id.wikipedia.org/wiki/Stres_(psikologi)',
                 },
                 {
                   no: '05',
                   judul: 'Hindari Rokok & Alkohol',
                   isi: 'Rokok menurunkan HDL (kolesterol baik) dan merusak dinding pembuluh darah.',
                   img: 'https://d1bpj0tv6vfxyp.cloudfront.net/benarkah-rokok-dan-alkohol-pemicu-utama-kanker-laring.jpg',
+                  wiki: 'https://id.wikipedia.org/wiki/Berhenti_merokok',
                 },
               ].map((item, i) => (
                 <FadeIn
                   key={i}
                   delay={i * 0.08}
-                  className="group flex gap-4 items-stretch bg-white rounded-2xl
+                  className="group flex gap-4 items-stretch bg-white rounded-2xl relative
                        border border-grayish/20 overflow-hidden
                        transition-all duration-500
                        hover:border-lime/50 hover:shadow-lg"
@@ -668,6 +664,15 @@ export function MateriSection() {
                       <p className="text-sm font-sans text-grayish mt-1 leading-relaxed">{item.isi}</p>
                     </div>
                   </div>
+
+                  {/* LINK WIKIPEDIA */}
+                  <a
+                    href={item.wiki}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Wikipedia: ${item.judul}`}
+                    className="absolute inset-0 z-20"
+                  />
                 </FadeIn>
               ))}
             </div>
@@ -691,32 +696,42 @@ export function MateriSection() {
                     {
                       baik: 'Oatmeal, nasi merah',
                       buruk: 'Nasi putih berlebihan',
-                      imgBaik: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=120&q=80&auto=format&fit=crop',
+                      imgBaik: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO-Tg2mtb9xhnaxR_1o5PiaK_PKp5gJnp6yfBc7Erm0B-PRNScNWLlqig&s=10',
                       imgBuruk: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=120&q=80&auto=format&fit=crop',
+                      wikiBaik: 'https://id.wikipedia.org/wiki/Oatmeal',
+                      wikiBuruk: 'https://id.wikipedia.org/wiki/Nasi',
                     },
                     {
                       baik: 'Ikan salmon, tuna',
                       buruk: 'Daging berlemak, jeroan',
                       imgBaik: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=120&q=80&auto=format&fit=crop',
                       imgBuruk: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=120&q=80&auto=format&fit=crop',
+                      wikiBaik: 'https://id.wikipedia.org/wiki/Salmon',
+                      wikiBuruk: 'https://id.wikipedia.org/wiki/Daging',
                     },
                     {
                       baik: 'Alpukat, kacang almond',
                       buruk: 'Gorengan, mentega',
                       imgBaik: 'https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=120&q=80&auto=format&fit=crop',
-                      imgBuruk: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=120&q=80&auto=format&fit=crop',
+                      imgBuruk: 'https://asset.kompas.com/crops/f3PxrJKuM1Aa_gjYA21_eKdBFXM=/100x67:900x600/1200x800/data/photo/2023/04/01/6427b71555180.jpg',
+                      wikiBaik: 'https://id.wikipedia.org/wiki/Alpukat',
+                      wikiBuruk: 'https://id.wikipedia.org/wiki/Gorengan',
                     },
                     {
                       baik: 'Sayur hijau, buah beri',
                       buruk: 'Kue manis, soda',
                       imgBaik: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=120&q=80&auto=format&fit=crop',
                       imgBuruk: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=120&q=80&auto=format&fit=crop',
+                      wikiBaik: 'https://id.wikipedia.org/wiki/Sayuran',
+                      wikiBuruk: 'https://id.wikipedia.org/wiki/Kue',
                     },
                     {
                       baik: 'Minyak zaitun',
                       buruk: 'Minyak kelapa sawit (jenuh)',
                       imgBaik: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=120&q=80&auto=format&fit=crop',
-                      imgBuruk: 'https://images.unsplash.com/photo-1604152135912-04a022e23696?w=120&q=80&auto=format&fit=crop',
+                      imgBuruk: 'https://mandirisejahteraalami.co.id/wp-content/uploads/2026/01/ChatGPT-Image-Jan-10-2026-04_26_08-AM.png',
+                      wikiBaik: 'https://id.wikipedia.org/wiki/Minyak_zaitun',
+                      wikiBuruk: 'https://id.wikipedia.org/wiki/Minyak_kelapa_sawit',
                     },
                   ].map((row, i) => (
                     <tr
@@ -725,34 +740,48 @@ export function MateriSection() {
                     >
                       {/* Kolom dianjurkan */}
                       <td className="py-3 px-4">
-                        <div className="flex items-center gap-3">
+                        <a
+                          href={row.wikiBaik}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 group/food"
+                        >
                           <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-lime/30 bg-gray-100">
                             <img
                               src={row.imgBaik}
                               alt={row.baik}
                               loading="lazy"
-                              className="absolute inset-0 w-full h-full object-cover"
+                              className="absolute inset-0 w-full h-full object-cover
+                                transition-transform duration-500 group-hover/food:scale-110"
                             />
                           </div>
-                          <span>
-
-                            {row.baik}</span>
-                        </div>
+                          <span className="group-hover/food:text-forest transition-colors">
+                            {row.baik}
+                          </span>
+                        </a>
                       </td>
 
                       {/* Kolom dihindari */}
                       <td className="py-3 px-4">
-                        <div className="flex items-center gap-3">
+                        <a
+                          href={row.wikiBuruk}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 group/food"
+                        >
                           <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-red-200 bg-gray-100">
                             <img
                               src={row.imgBuruk}
                               alt={row.buruk}
                               loading="lazy"
-                              className="absolute inset-0 w-full h-full object-cover"
+                              className="absolute inset-0 w-full h-full object-cover
+                                transition-transform duration-500 group-hover/food:scale-110"
                             />
                           </div>
-                          <span> {row.buruk}</span>
-                        </div>
+                          <span className="group-hover/food:text-forest transition-colors">
+                            {row.buruk}
+                          </span>
+                        </a>
                       </td>
                     </tr>
                   ))}
@@ -791,7 +820,7 @@ export function MateriSection() {
                 'Olahraga minimal 30 menit',
                 'Makan buah & sayur 5 porsi',
                 'Tidur 7–8 jam',
-                'Tidak merokok & tidak alkohol',
+                'Tidak merokok & tidak minum alkohol',
                 'Cek tekanan darah bila perlu',
                 'Luangkan waktu relaksasi',
               ].map((item, i) => {
@@ -861,6 +890,18 @@ export function MateriSection() {
                 />
               </div>
             </div>
+
+            {/* Link Wikipedia */}
+            <a
+              href="https://id.wikipedia.org/wiki/Gaya_hidup_sehat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10 mt-6 inline-flex items-center gap-2 
+                font-sans text-xs uppercase tracking-widest text-lime 
+                border-b border-lime/40 hover:border-lime pb-1"
+            >
+              Selengkapnya di Wikipedia →
+            </a>
           </FadeIn>
         </div>
       </section>
