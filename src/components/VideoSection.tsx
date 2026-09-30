@@ -3,17 +3,26 @@
 import { useEffect, useState } from 'react';
 import { FadeIn } from './FadeIn';
 import { SectionHeader } from './SectionHeader';
-import { Maximize2, X } from 'lucide-react';
+import { Maximize2, X, ArrowLeft } from 'lucide-react';
 
 export function VideoSection() {
   const [zoomed, setZoomed] = useState(false);
 
-  // Tutup pakai Escape
+  // Escape untuk tutup
   useEffect(() => {
     if (!zoomed) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setZoomed(false); };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setZoomed(false);
+    };
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+
+    // Kunci scroll body saat zoom
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
   }, [zoomed]);
 
   return (
@@ -61,12 +70,14 @@ export function VideoSection() {
             </div>
 
             <div className="mt-4 text-center">
-              <p className="font-heading text-lg uppercase text-lime">Bahaya Kolesterol Tinggi</p>
+              <p className="font-heading text-lg uppercase text-lime">
+                Bahaya Kolesterol Tinggi
+              </p>
               <p className="mt-1 font-sans text-xs text-cream/60">
                 Klik tombol <span className="text-lime">⤢</span> untuk memperbesar
               </p>
               <a
-                href="/videos/bahaya-kolesterol-tinggi.mp4"
+                href="/videos/kolestrol.mp4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3 inline-block font-sans text-[10px] uppercase tracking-[0.25em] text-lime/80 border-b border-lime/40 hover:border-lime pb-0.5"
@@ -78,35 +89,72 @@ export function VideoSection() {
         </FadeIn>
       </div>
 
-      {/* Overlay: video diperbesar, rasio tetap natural */}
+      {/* Overlay FULL SCREEN */}
       {zoomed && (
         <div
-          className="fixed inset-0 z-[999] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[999] bg-black flex flex-col"
           onClick={() => setZoomed(false)}
         >
-          <button
-            type="button"
-            onClick={() => setZoomed(false)}
-            aria-label="Tutup"
-            className="absolute top-5 right-5 z-10 h-10 w-10 flex items-center justify-center rounded-full bg-white/10 text-cream hover:bg-lime hover:text-forest transition-colors"
-          >
-            <X className="h-5 w-5" />
-          </button>
-
-          {/* Video tanpa wrapper aspect — ukuran natural, dibatasi viewport */}
-          <video
-            className="max-h-[90vh] max-w-[95vw] rounded-2xl border border-lime/20 bg-black shadow-2xl"
-            src="/videos/bahaya-kolesterol-tinggi.mp4"
-            controls
-            autoPlay
-            playsInline
+          {/* Header overlay dengan tombol kembali */}
+          <div
+            className="flex items-center justify-between px-4 py-3 md:px-6 md:py-4 bg-black/80 backdrop-blur-md border-b border-lime/20 shrink-0"
             onClick={(e) => e.stopPropagation()}
           >
-            Browser Anda tidak mendukung tag video.
-          </video>
+            {/* Tombol Kembali (kiri) */}
+            <button
+              type="button"
+              onClick={() => setZoomed(false)}
+              aria-label="Kembali"
+              className="flex items-center gap-2 rounded-full bg-lime text-forest px-4 py-2 font-sans text-xs font-bold uppercase tracking-widest hover:bg-cream transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" strokeWidth={2.5} />
+              Kembali
+            </button>
+
+            {/* Judul (tengah) */}
+            <p className="hidden md:block font-heading text-sm md:text-base uppercase text-lime tracking-wider">
+              Bahaya Kolesterol Tinggi
+            </p>
+
+            {/* Tombol X (kanan) */}
+            <button
+              type="button"
+              onClick={() => setZoomed(false)}
+              aria-label="Tutup"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-cream hover:bg-lime hover:text-forest transition-colors"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+
+          {/* Area video full screen */}
+          <div
+            className="flex-1 flex items-center justify-center overflow-hidden bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              className="w-full h-full object-contain"
+              src="/videos/kolestrol.mp4"
+              poster="/videos/kolestrol-poster.jpg"
+              controls
+              autoPlay
+              playsInline
+            >
+              Browser Anda tidak mendukung tag video.
+            </video>
+          </div>
+
+          {/* Footer hint (opsional, auto-hide di HP) */}
+          <div
+            className="hidden md:flex items-center justify-center px-6 py-3 bg-black/80 border-t border-lime/20 text-cream/50 text-[11px] font-sans shrink-0"
+            onClick={(e) => e.stopPropagation()}
+          >
+            Tekan <kbd className="mx-1 px-2 py-0.5 rounded bg-white/10 text-cream/80 font-mono text-[10px]">ESC</kbd> untuk keluar
+          </div>
         </div>
       )}
     </section>
   );
 }
+
 export default VideoSection;

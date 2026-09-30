@@ -66,9 +66,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 border-t border-cream/10 pt-8 relative z-20 flex flex-col md:flex-row justify-between items-center md:items-start gap-4">
+      <div className="container mx-auto px-6 border-t border-cream/10 pt-8 relative z-40 flex flex-col md:flex-row justify-between items-center md:items-start gap-4">
         {/* KIRI: Copyright + Author */}
-        <p className="text-[12px] font-sans text-cream/50 text-center md:text-left">
+        <p className="text-[12px] font-sans text-cream/50 text-center md:text-left relative z-40">
           &copy; {new Date().getFullYear()} Tim Penyusun Tugas Mid Semester.
           Hak Cipta Dilindungi.
           <span className="mx-2 text-cream/20">|</span>
@@ -78,7 +78,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="
-              relative z-20
+              relative z-50
               inline-block
               pointer-events-auto cursor-pointer
               px-1 py-0.5
@@ -94,19 +94,22 @@ export function Footer() {
         </p>
 
         {/* KANAN: Disclaimer */}
-        <p className="text-[12px] font-sans text-cream/50 text-center md:text-right max-w-lg">
+        <p className="text-[12px] font-sans text-cream/50 text-center md:text-right max-w-lg relative z-40">
           Disclaimer: Informasi pada website ini ditujukan untuk keperluan
           edukasi, bukan sebagai pengganti nasihat medis profesional. Silakan
           konsultasikan dengan dokter Anda.
         </p>
       </div>
 
-      {/* Efek hover text besar "Edukasya" */}
-      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36 relative z-30">
-        <TextHoverEffect text="Edukasya" className="z-50" />
+      {/* Efek hover text besar "Edukasya" — pointer-events-none biar tidak menghalangi klik */}
+      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36 relative z-30 pointer-events-none">
+        <TextHoverEffect text="Edukasya" className="z-30 pointer-events-none" />
       </div>
 
-      <FooterBackgroundGradient />
+      {/* Background gradient — juga pointer-events-none biar tidak blokir klik */}
+      <div className="pointer-events-none">
+        <FooterBackgroundGradient />
+      </div>
     </footer>
   );
 }

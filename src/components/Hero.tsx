@@ -3,7 +3,7 @@
 import { FadeIn } from "./FadeIn";
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export function Hero() {
   return (

@@ -8,7 +8,7 @@ import {
     type MotionValue,
 } from "framer-motion";
 // Kalau pakai `motion` package (bukan framer-motion), ganti jadi:
-// import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
+// import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 
 import Image from "next/image";
 
