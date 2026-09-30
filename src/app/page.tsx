@@ -14,10 +14,6 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      <div id="tim">
-        <TimSection />
-      </div>
-
       <div id="materi">
         <MateriSection />
       </div>
@@ -34,7 +30,13 @@ export default function Home() {
         <KuisSection />
       </div>
 
-      <Footer />
+      <div id="tim">
+        <TimSection />
+      </div>
+
+      <div id="about">
+        <Footer />
+      </div>
     </main>
   );
 }

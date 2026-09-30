@@ -13,77 +13,116 @@ type Soal = {
 
 const DAFTAR_SOAL: Soal[] = [
   {
-    q: "Apa tujuan utama terapi obat anti kolesterol?",
+    q: "Apa tujuan utama dari obat anti kolesterol?",
     opsi: [
-      "Menurunkan kadar LDL dan meningkatkan HDL",
+      "Menurunkan LDL & trigliserida serta meningkatkan HDL",
       "Menaikkan kadar trigliserida dalam darah",
-      "Menghilangkan seluruh lemak tubuh",
-      "Meningkatkan tekanan darah",
+      "Menghilangkan seluruh lemak tubuh secara instan",
+      "Meningkatkan tekanan darah agar jantung lebih kuat",
     ],
     jawaban: 0,
     materi: "Materi A — Pengertian",
   },
   {
-    q: "Obat golongan statin bekerja dengan cara...",
+    q: "Berikut ini adalah cara kerja utama obat anti kolesterol, KECUALI...",
     opsi: [
-      "Menghambat penyerapan lemak di usus",
-      "Menghambat enzim HMG-CoA reduktase di hati",
-      "Meningkatkan ekskresi empedu",
-      "Menghancurkan plak di pembuluh darah",
+      "Menghambat enzim di hati",
+      "Menghambat penyerapan kolesterol di usus",
+      "Meningkatkan pembuangan kolesterol melalui empedu",
+      "Menghancurkan plak yang sudah menempel di pembuluh darah",
     ],
+    jawaban: 3,
+    materi: "Materi A — Pengertian",
+  },
+  {
+    q: "Manakah yang BUKAN termasuk 5 golongan utama obat anti kolesterol?",
+    opsi: ["Statin", "Fibrat", "Antibiotik", "PCSK9 Inhibitor"],
+    jawaban: 2,
+    materi: "Materi B — Penggolongan",
+  },
+  {
+    q: "Simvastatin dan Atorvastatin merupakan contoh obat golongan...",
+    opsi: ["Fibrat", "Statin", "Niacin", "Bile Acid Sequestrant"],
     jawaban: 1,
     materi: "Materi B — Penggolongan",
   },
   {
-    q: "Berikut ini yang termasuk golongan obat anti kolesterol, kecuali...",
-    opsi: ["Statin", "Fibrat", "Ezetimibe", "Antibiotik"],
-    jawaban: 3,
+    q: "Ezetimibe bekerja dengan cara menghambat penyerapan kolesterol di usus, sehingga termasuk golongan...",
+    opsi: [
+      "Penghambat Absorpsi",
+      "Fibrat",
+      "Bile Acid Sequestrant",
+      "PCSK9 Inhibitor",
+    ],
+    jawaban: 0,
     materi: "Materi B — Penggolongan",
   },
   {
-    q: "Kapan waktu terbaik minum obat statin agar efektif?",
-    opsi: [
-      "Pagi hari setelah makan",
-      "Malam hari sebelum tidur",
-      "Siang hari saat makan",
-      "Kapan saja tanpa aturan",
-    ],
+    q: "Berapa dosis umum Ezetimibe yang biasa digunakan?",
+    opsi: ["2,5 mg sekali sehari", "10 mg sekali sehari", "50 mg dua kali sehari", "100 mg sekali sehari"],
     jawaban: 1,
     materi: "Materi C — Aturan Pakai",
   },
   {
-    q: "Efek samping serius yang perlu diwaspadai dari obat statin adalah...",
+    q: "Bagaimana cara minum tablet obat anti kolesterol yang benar?",
     opsi: [
-      "Nyeri otot berat & peningkatan enzim hati",
-      "Rambut rontok ringan",
-      "Sedikit mengantuk",
-      "Warna kulit menjadi gelap",
+      "Dikunyah agar cepat larut",
+      "Digerus lalu dicampur air",
+      "Ditelan utuh dengan air",
+      "Dilarutkan dalam minuman panas",
+    ],
+    jawaban: 2,
+    materi: "Materi C — Aturan Pakai",
+  },
+  {
+    q: "Manakah yang termasuk efek samping umum obat anti kolesterol?",
+    opsi: [
+      "Nyeri otot, sakit kepala, dan gangguan pencernaan",
+      "Rambut memutih dan kuku membiru",
+      "Penglihatan menjadi warna hijau",
+      "Tinggi badan bertambah",
     ],
     jawaban: 0,
     materi: "Materi D — Efek Samping",
   },
   {
-    q: "Selain obat, pola hidup sehat untuk menurunkan kolesterol antara lain...",
+    q: "Menurut 5 Pilar Pola Hidup Sehat, berapa lama aktivitas fisik minimal yang dianjurkan setiap hari?",
     opsi: [
-      "Konsumsi gorengan setiap hari",
-      "Olahraga rutin & diet rendah lemak jenuh",
-      "Merokok untuk melebarkan pembuluh darah",
-      "Tidur kurang dari 4 jam",
+      "5 menit, 1 kali seminggu",
+      "10 menit, 3 kali seminggu",
+      "30 menit, 5 kali seminggu",
+      "2 jam, setiap hari",
     ],
-    jawaban: 1,
+    jawaban: 2,
     materi: "Materi E — Pola Hidup Sehat",
   },
   {
-    q: "Target kadar LDL yang umumnya dianjurkan untuk pasien risiko tinggi adalah...",
-    opsi: ["< 30 mg/dL", "< 70 mg/dL", "< 130 mg/dL", "< 200 mg/dL"],
-    jawaban: 1,
-    materi: "Materi F — Target Terapi",
+    q: "Berapa durasi tidur yang cukup untuk membantu tubuh memperbaiki sel dan mengatur hormon stres?",
+    opsi: ["3–4 jam per hari", "5–6 jam per hari", "7–8 jam per hari", "10–12 jam per hari"],
+    jawaban: 2,
+    materi: "Materi E — Pola Hidup Sehat",
   },
   {
-    q: "Obat golongan PCSK9 inhibitor umumnya diberikan melalui...",
-    opsi: ["Tablet oral", "Suntikan subkutan", "Inhalasi", "Tetes mata"],
+    q: "Produk unggulan yang diproduksi oleh SMK Al Syairiyah Limpung adalah...",
+    opsi: [
+      "Kapsul, kemasan, dan teh rebusan daun salam",
+      "Kapsul dan sirup daun sirsak",
+      "Teh celup daun jambu biji",
+      "Minyak kayu putih kemasan",
+    ],
+    jawaban: 0,
+    materi: "Materi F — Produk Unggulan",
+  },
+  {
+    q: "Pendekatan promosi produk daun salam dilakukan dengan cara...",
+    opsi: [
+      "Klaim medis berlebihan agar cepat laku",
+      "Edukasi gaya hidup sehat (soft-selling) lewat media sosial, konten resep, dan seminar",
+      "Menjanjikan penyembuhan total tanpa dokter",
+      "Menjual hanya lewat iklan berbayar",
+    ],
     jawaban: 1,
-    materi: "Materi G — Terapi Lanjutan",
+    materi: "Materi F — Strategi Pemasaran",
   },
 ];
 
@@ -124,11 +163,12 @@ export function KuisSection() {
   return (
     <section className="py-24 bg-cream-darker">
       <div className="container mx-auto px-6">
-        <SectionHeader badge="INTERAKTIF" nomor="10" judulBold="KUIS" judulScript="Anti Kolesterol" />
+        <SectionHeader badge="INTERAKTIF" nomor="08" judulBold="KUIS" judulScript="Anti Kolesterol" />
 
         <FadeIn className="max-w-3xl mx-auto text-center mt-8 mb-12">
           <p className="font-sans text-grayish leading-relaxed">
-            Uji seberapa jauh pemahamanmu tentang obat anti kolesterol. Jawab {total} pertanyaan berikut.
+            Uji seberapa jauh pemahamanmu tentang obat anti kolesterol & pola hidup sehat.
+            Jawab {total} pertanyaan berikut.
           </p>
         </FadeIn>
 
@@ -149,6 +189,7 @@ export function KuisSection() {
               </div>
 
               <div className="flex items-start gap-4 mb-8">
+                <BrainCircuit className="w-7 h-7 text-lime shrink-0 mt-1" />
                 <h3 className="font-heading text-xl md:text-2xl text-forest leading-snug">
                   {DAFTAR_SOAL[current].q}
                 </h3>

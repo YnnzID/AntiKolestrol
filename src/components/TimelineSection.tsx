@@ -3,16 +3,38 @@ import { SectionHeader } from './SectionHeader';
 import { Star, Sparkles } from 'lucide-react';
 
 export function TimelineSection() {
-  const events = [
-    { y: "1897", judul: "Aspirin Disintesis", d: "Felix Hoffmann mensintesis asam asetilsalisilat di Bayer, membuka era obat sintetik modern." },
-    { y: "1928", judul: "Penemuan Penisilin", d: "Alexander Fleming menemukan penisilin, awal era antibiotik yang menyelamatkan jutaan nyawa." },
-    { y: "1950-an", judul: "Era Obat Sintetik", d: "Booming pengembangan obat sintetik dan pembentukan kerangka uji klinis modern." },
-    { y: "1962", judul: "Amandemen Kefauver-Harris", d: "FDA mewajibkan bukti efikasi & keamanan sebelum obat dipasarkan ke publik.", lime: true },
-    { y: "1978", judul: "Rekayasa Genetika", d: "Teknologi DNA rekombinan melahirkan insulin manusia pertama (Humulin)." },
-    { y: "1990-an", judul: "Genomika & HTS", d: "High-Throughput Screening dan genomika mempercepat penemuan target obat baru." },
-    { y: "2012", judul: "Terapi Gen Pertama", d: "Glybera disetujui di Eropa sebagai terapi gen pertama di dunia barat." },
-    { y: "2020", judul: "Vaksin mRNA", d: "Vaksin mRNA COVID-19 disetujui darurat, tonggak baru bioteknologi farmasi." },
-    { y: "2024", judul: "AI Drug Discovery", d: "Kecerdasan buatan mempercepat penemuan & desain molekul obat secara masif." },
+  const events: Array<{ y: string; judul: string; d: string; lime?: boolean }> = [
+    {
+      y: "sejak 3000 SM – abad ke-1 M",
+      judul: "Zaman Kuno & Tradisi Herbal",
+      d: "Daun salam telah lama digunakan dalam pengobatan tradisional. Bangsa Sumeria, Mesir, dan Tiongkok memanfaatkan dedaunan aromatik sebagai ramuan herbal. Di Nusantara, daun salam menjadi bagian resep warisan turun-temurun untuk menjaga kebugaran dan kesehatan pencernaan.",
+    },
+    {
+      y: "abad ke-7 – 1400-an",
+      judul: "Jalur Rempah & Penyebaran Nusantara",
+      d: "Melalui jalur rempah, daun salam (Syzygium polyanthum) menyebar di kepulauan Nusantara. Masyarakat Jawa, Sunda, dan Melayu memakainya sebagai bumbu masakan sekaligus obat tradisional untuk asam urat, kolesterol, dan gangguan pencernaan.",
+    },
+    {
+      y: "1700-an – 1900-an",
+      judul: "Kajian Botani & Dokumentasi Ilmiah",
+      d: "Peneliti Eropa mulai mencatat klasifikasi ilmiah daun salam. Nama Syzygium polyanthum (Wight) Walp. dikenal dalam literatur botani. Kandungan minyak atsiri (sitral, eugenol) dan flavonoid mulai dipelajari secara ilmiah.",
+    },
+    {
+      y: "1900-an – 1970-an",
+      judul: "Isolasi Senyawa Aktif",
+      d: "Penelitian menemukan senyawa aktif penting pada daun salam: flavonoid, tanin, saponin, alkaloid, dan minyak atsiri. Senyawa-senyawa ini terbukti memiliki aktivitas antioksidan, antibakteri, dan membantu menurunkan kadar gula serta kolesterol darah.",
+    },
+    {
+      y: "1980-an – 2000-an",
+      judul: "Era Herbal Terstandar",
+      d: "Daun salam mulai diproduksi dalam bentuk kapsul, teh celup, dan ekstrak terstandar. Herbal ini mulai dikonsumsi rutin sebagai minuman kesehatan masyarakat modern di Indonesia.",
+    },
+    {
+      y: "2010-an – kini",
+      judul: "Inovasi Produk & Pemberdayaan Sekolah",
+      d: "Inovasi pengolahan daun salam berkembang pesat. SMK Al Syairiyah Limpung memproduksi kapsul, kemasan, dan teh rebusan daun salam sebagai produk herbal unggulan, memberdayakan siswa sekaligus mengangkat kearifan lokal menjadi produk bernilai jual.",
+      lime: true,
+    },
   ];
 
   return (
@@ -30,16 +52,15 @@ export function TimelineSection() {
           badge="MATERI G"
           nomor="08"
           judulBold="SEJARAH"
-          judulScript="Pengembangan Obat"
-          credit="Anggota 6"
+          judulScript="Daun Salam"
         />
 
         {/* ---------- INTRO ---------- */}
         <FadeIn className="max-w-3xl mx-auto text-center mt-8 mb-20">
           <p className="font-sans text-grayish leading-relaxed">
-            Perjalanan panjang <strong className="text-forest">pengembangan obat</strong> dari
-            sintesis pertama aspirin hingga era kecerdasan buatan — sebuah
-            evolusi ilmu farmasi yang mengubah wajah pengobatan modern.
+            Perjalanan panjang <strong className="text-forest">daun salam</strong> —
+            dari ramuan tradisional Nusantara hingga menjadi produk herbal unggulan
+            yang diproduksi <strong className="text-forest">SMK Al Syairiyah Limpung</strong>.
           </p>
         </FadeIn>
 
@@ -190,8 +211,6 @@ export function TimelineSection() {
             );
           })}
         </div>
-
-
 
       </div>
     </section>

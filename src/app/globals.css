@@ -128,3 +128,22 @@
 .animate-fade-slide {
   animation: fade-slide-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
+@keyframes pulse-lime {
+
+  0%,
+  100% {
+    color: #c8e678;
+    text-shadow: 0 0 0px rgba(200, 230, 120, 0);
+  }
+
+  50% {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(200, 230, 120, 0.9);
+  }
+}
+
+.animate-pulse-lime {
+  display: inline-block;
+  animation: pulse-lime 3s ease-in-out infinite;
+}

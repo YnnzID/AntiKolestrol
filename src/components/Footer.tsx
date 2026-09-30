@@ -1,11 +1,22 @@
+"use client";
+import React from "react";
+import {
+  FooterBackgroundGradient,
+  TextHoverEffect,
+} from "@/components/ui/hover-footer";
+
 export function Footer() {
   return (
-    <footer className="bg-forest-dark text-cream pt-24 pb-8 border-t-[16px] border-lime relative z-10">
-      <div className="container mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-forest-dark text-cream pt-24 pb-8 border-t-[16px] border-lime relative z-10 overflow-hidden">
+      <div className="container mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16 relative z-20">
         <div className="col-span-2">
-          <h2 className="font-heading text-4xl mb-4 tracking-tighter">EdukasyaClub</h2>
+          <h2 className="font-heading text-4xl mb-4 tracking-tighter">
+            EdukasyaClub
+          </h2>
           <p className="font-sans text-cream/70 max-w-sm mb-6">
-            Website edukasi interaktif untuk memenuhi tugas mid semester. Dibuat dengan dedikasi untuk menyajikan informasi medis yang akurat dan mudah dipahami.
+            Website edukasi interaktif untuk memenuhi tugas mid semester.
+            Dibuat dengan dedikasi untuk menyajikan informasi medis yang akurat
+            dan mudah dipahami.
           </p>
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-cream/10 text-[11px] font-bold uppercase tracking-[0.15em]">
             <span>FKK X RPL</span>
@@ -14,31 +25,54 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <h4 className="font-bold uppercase tracking-widest text-lime mb-6 text-sm">Navigasi</h4>
+          <h4 className="font-bold uppercase tracking-widest text-lime mb-6 text-sm">
+            Navigasi
+          </h4>
           <ul className="space-y-3 font-sans text-cream/80 text-sm">
-            <li><a href="#" className="hover:text-lime transition-colors">Beranda</a></li>
-            <li><a href="#materi" className="hover:text-lime transition-colors">Materi Lengkap</a></li>
-            <li><a href="#tim" className="hover:text-lime transition-colors">Tim Penyusun</a></li>
-            <li><a href="#video" className="hover:text-lime transition-colors">Video Edukasi</a></li>
+            <li>
+              <a href="#" className="hover:text-lime transition-colors">
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a href="#materi" className="hover:text-lime transition-colors">
+                Materi Lengkap
+              </a>
+            </li>
+            <li>
+              <a href="#tim" className="hover:text-lime transition-colors">
+                Tim Penyusun
+              </a>
+            </li>
+            <li>
+              <a href="#video" className="hover:text-lime transition-colors">
+                Video Edukasi
+              </a>
+            </li>
           </ul>
         </div>
         <div>
-          <h4 className="font-bold uppercase tracking-widest text-lime mb-6 text-sm">Sumber</h4>
+          <h4 className="font-bold uppercase tracking-widest text-lime mb-6 text-sm">
+            Sumber
+          </h4>
           <ul className="space-y-3 font-sans text-cream/80 text-sm">
             <li>Buku Biologi Kelas XII</li>
             <li>Jurnal Medis & Farmakologi</li>
             <li>Sumber Regulasi — FDA & BPOM RI</li>
-            <li>Sumber Daring — PubMed, NCBI, dan situs ilmiah terpercaya</li>
+            <li>
+              Sumber Daring — PubMed, NCBI, dan situs ilmiah terpercaya
+            </li>
           </ul>
         </div>
       </div>
 
-      <div className="container mx-auto px-6 border-t border-cream/10 pt-8 relative z-10 flex flex-col md:flex-row justify-between items-center md:items-start gap-4">
+      <div className="container mx-auto px-6 border-t border-cream/10 pt-8 relative z-20 flex flex-col md:flex-row justify-between items-center md:items-start gap-4">
         {/* KIRI: Copyright + Author */}
         <p className="text-[12px] font-sans text-cream/50 text-center md:text-left">
-          &copy; {new Date().getFullYear()} Tim Penyusun Tugas Mid Semester. Hak Cipta Dilindungi.
+          &copy; {new Date().getFullYear()} Tim Penyusun Tugas Mid Semester.
+          Hak Cipta Dilindungi.
           <span className="mx-2 text-cream/20">|</span>
-          Crafted by{' '}
+          Development by{" "}
           <a
             href="https://ynnz.my.id"
             target="_blank"
@@ -55,15 +89,26 @@ export function Footer() {
             "
           >
             YnnzID
-          </a>
+          </a>{" "}
           & Team
         </p>
 
         {/* KANAN: Disclaimer */}
         <p className="text-[12px] font-sans text-cream/50 text-center md:text-right max-w-lg">
-          Disclaimer: Informasi pada website ini ditujukan untuk keperluan edukasi, bukan sebagai pengganti nasihat medis profesional. Silakan konsultasikan dengan dokter Anda.
+          Disclaimer: Informasi pada website ini ditujukan untuk keperluan
+          edukasi, bukan sebagai pengganti nasihat medis profesional. Silakan
+          konsultasikan dengan dokter Anda.
         </p>
       </div>
+
+      {/* Efek hover text besar "Edukasya" */}
+      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36 relative z-30">
+        <TextHoverEffect text="Edukasya" className="z-50" />
+      </div>
+
+      <FooterBackgroundGradient />
     </footer>
   );
 }
+
+export default Footer;
