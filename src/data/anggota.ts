@@ -50,7 +50,7 @@ export const anggota: Anggota[] = [
     jabatan: "Anggota",
     tugas: "Materi C — Aturan Pakai",
     bagian: "C",
-    foto: "/images/fika.JPG"
+    foto: "/images/fika.jpeg"
   },
   {
     id: 5,
