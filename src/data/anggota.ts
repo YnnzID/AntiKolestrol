@@ -30,7 +30,7 @@ export const anggota: Anggota[] = [
     jabatan: "Anggota",
     tugas: "Dokumentasi",
     bagian: "A",
-    foto: "/images/anggota-1.jpg"
+    foto: "/images/codot.jpeg"
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ export const anggota: Anggota[] = [
     jabatan: "Anggota",
     tugas: "Materi E — Pola Hidup Sehat",
     bagian: "E",
-    foto: "/images/anggota-5.jpg"
+    foto: "/images/ayak.jpeg"
   },
   {
     id: 7,
